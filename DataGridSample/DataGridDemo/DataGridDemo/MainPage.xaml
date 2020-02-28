@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataGridDemo"
+             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             xmlns:sfgrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             x:Class="DataGridDemo.MainPage">
+    
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <sfgrid:SfDataGrid x:Name="dataGrid" 
+                               ItemsSource="{Binding OrdersInfo}" 
+                               AutoGenerateColumns="False"
+                               ColumnSizer="Star"
+                               AllowEditing="True"
+                               SelectionMode="Single"
+                               NavigationMode="Cell">
+
+                <sfgrid:SfDataGrid.Columns >
+                    <sfgrid:GridTextColumn MappingName="OrderID" />
+                    <sfgrid:GridComboBoxColumn MappingName="FirstName"
+                                               BindingContext="{x:Reference viewModel}" 
+                                               ItemsSource="{Binding CustomerNames}" />
+                    <sfgrid:GridTextColumn MappingName="LastName" />
+              
+                </sfgrid:SfDataGrid.Columns>
+            </sfgrid:SfDataGrid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
