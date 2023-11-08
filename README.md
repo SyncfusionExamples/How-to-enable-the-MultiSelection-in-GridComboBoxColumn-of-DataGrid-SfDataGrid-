@@ -1,6 +1,6 @@
 # How to enable the MultiSelection in GridComboBoxColumn of DataGrid SfDataGrid 
 This example illustrates how to enable the MultiSelection in GridComboBoxColumn of DataGrid SfDataGrid
- Getting Started with Xamarin ComboBox (SfComboBox)
+#  Getting Started with Xamarin ComboBox (SfComboBox)
 
 ##  Adding SfComboBox reference
 You can add SfComboBox reference using one of the following methods:
